@@ -26,7 +26,7 @@ class EditBarController(
             true
         }
         fragment.button.setOnClickListener {
-            chief.lastName = "Cathebras"
+            chief.lastName = fragment.getString(R.string.default_chief_name)
 
         }
 
