@@ -8,7 +8,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentTitleView"
-        android:name="net.nponsard.test.Title"
+        android:name="net.nponsard.test.TitleFragment"
         android:layout_width="0dp"
         android:layout_height="36dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,5 +38,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragmentListView"
-        tools:layout="@layout/fragment_edit_bar"/>
+        tools:layout="@layout/fragment_edit_bar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

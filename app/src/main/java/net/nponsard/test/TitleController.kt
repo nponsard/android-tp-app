@@ -2,7 +2,7 @@ package net.nponsard.test
 
 import java.util.Observer
 
-class TitleController(private val fragment: Title, chief: Person) : Observer {
+class TitleController(private val fragment: TitleFragment, chief: Person) : Observer {
 
     init {
         chief.addObserver(this)

@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var chief: Person
 
     lateinit var listFragment: ListFragment
-    lateinit var titleFragment: Title
+    lateinit var titleFragment: TitleFragment
     lateinit var editBarFragment: EditBarFragment
     lateinit var editBarController: EditBarController
     lateinit var listController: ListController
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         listFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentListView) as ListFragment
-        titleFragment = supportFragmentManager.findFragmentById(R.id.fragmentTitleView) as Title
+        titleFragment = supportFragmentManager.findFragmentById(R.id.fragmentTitleView) as TitleFragment
         editBarFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentEditView) as EditBarFragment
 
