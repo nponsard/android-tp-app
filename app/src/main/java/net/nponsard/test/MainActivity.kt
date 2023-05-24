@@ -1,18 +1,14 @@
 package net.nponsard.test
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
 
 class MainActivity : AppCompatActivity() {
-    var persons = ArrayList<Person>()
-    var selected: Person? = null
-        get() = field
-        set(value) {
-            field = value
-            editBarController.changeSelected(value)
-        }
+    var persons = ArrayList<PersonViewModel>()
+    var selected: MutableLiveData<PersonViewModel?> = MutableLiveData(null)
 
-    lateinit var chief: Person
+    lateinit var chief: PersonViewModel
 
     lateinit var listFragment: ListFragment
     lateinit var titleFragment: TitleFragment
@@ -22,16 +18,16 @@ class MainActivity : AppCompatActivity() {
     lateinit var titleController: TitleController
 
     init {
-        this.persons.add(Person("Christophe", "Fiorio", "MEA5"))
-        this.persons.add(Person("Philippe", "Maurine", "MEA3"))
-        this.persons.add(Person("Éric", "Dubreuil", "MEA4"))
+        this.persons.add(PersonViewModel("Christophe", "Fiorio", "MEA5"))
+        this.persons.add(PersonViewModel("Philippe", "Maurine", "MEA3"))
+        this.persons.add(PersonViewModel("Éric", "Dubreuil", "MEA4"))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        chief = Person(
+        chief = PersonViewModel(
             "Guy", getString(R.string.default_chief_name),
             "MEA3"
         )
@@ -40,10 +36,10 @@ class MainActivity : AppCompatActivity() {
 
         listFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentListView) as ListFragment
-        titleFragment = supportFragmentManager.findFragmentById(R.id.fragmentTitleView) as TitleFragment
+        titleFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentTitleView) as TitleFragment
         editBarFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentEditView) as EditBarFragment
-
 
 
     }
